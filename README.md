@@ -5,13 +5,15 @@ Features:
   2. Predict a real time arrival of a bus stop that users are interested in.
   3. Locate a nearest bus stop to a user's location and display them on the map
   4. Display the direction of two points that a user is concerned about.
-==========
+
+
 Tools:
   A. AngularJS
   B. Ionic
   C. Cordova
   D. Gmaps
-==========
+
+
 Flatform:
   1. Android
   2. IOs

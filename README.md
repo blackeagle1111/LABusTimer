@@ -7,11 +7,12 @@ Features:
   4. Display the direction of two points that a user is concerned about.
 
 
+
 Tools:
-  A. AngularJS
-  B. Ionic
-  C. Cordova
-  D. Gmaps
+  1. AngularJS
+  2. Ionic
+  3. Cordova
+  4. Gmaps
 
 
 Flatform:

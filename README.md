@@ -12,7 +12,8 @@ Tools:
   1. AngularJS
   2. Ionic
   3. Cordova
-  4. Gmaps
+  4. Google Map
+  5. Fusion Table
 
 
 Flatform:

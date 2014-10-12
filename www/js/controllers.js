@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngRoute'])
 
-.controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function ($scope, $ionicModal, $ionicNavBarDelegate, $timeout, $route) {
     // Form data for the login modal
     $scope.loginData = {};
 
@@ -10,7 +10,12 @@ angular.module('starter.controllers', [])
     }).then(function (modal) {
         $scope.modal = modal;
     });
+    //refresh when clicking back
+    $scope.refresh = function () {
+        $ionicNavBarDelegate.back();
+        $route.reload();
 
+    }
     // Triggered in the login modal to close it
     $scope.closeLogin = function () {
         $scope.modal.hide();
@@ -59,44 +64,77 @@ angular.module('starter.controllers', [])
     });
 })
 //this get all stop of a route
-.controller('StopCallerCtrl', function ($scope, $http) {
+.controller('StopCallerCtrl', ['$scope', '$http', '$route', function ($scope, $http, $route) {
     //get the routeID    
+    $route.reload();
     var index = window.location.href.lastIndexOf('/');
     $scope.routeID = window.location.href.substring(index + 1);
+    $scope.refresh = function () {
+        $route.reload();
+    };
     $scope.stops = {};
     $scope.status = "";
     //get the stop based on routeID
-    $scope.getStop = (function () {
+
+    $scope.getStop = function () {
         $http.get("http://api.metro.net/agencies/lametro/routes/" + $scope.routeID + "/sequence/")
             .success(function (data, status) {
                 $scope.stops = data.items;
                 $scope.status = status;
             })
             .error(function (error, status) {
-                alert("cannot make a call to server. Message: " + error + " Status: " + status);
-            })
-    })();
+                $route.reload();
+                alert("cannot make a call");
 
-})
+            })
+    };
+
+
+} ])
 //this will get all routes pass a specific stop
-.controller("MulRouteCallerCtrl", function ($scope, $http) {
+.controller("MulRouteCallerCtrl", ['$scope', '$http', function ($scope, $http) {
     //get the stopID
     var index = window.location.href.lastIndexOf('/');
     $scope.stopID = window.location.href.substring(index + 1);
     //initialize the data
     $scope.routes = {};
     $scope.status = '';
-    $http.get("http://api.metro.net/agencies/lametro/stops/" + $scope.stopID + "/predictions/")
-    //return all routes
+    $scope.refresh = function () {
+        $route.reload();
+    };
+    $scope.getStop = (function () {
+        $http.get("http://api.metro.net/agencies/lametro/stops/" + $scope.stopID + "/predictions/")
+        //return all routes
         .success(function (data, status) {
             $scope.routes = data.items;
             $scope.status = status;
         }).error(function (error) {
-            alert("cannot call the server. Message: " + error);
+            alert('cannot make a call');
         });
-})
-.controller('MapCtrl',function($scope,$http){
-    
+
+    })();
+
+} ])
+//test page to create fusion data
+.controller('FusionCtrl', function ($scope, $http) {
+    $scope.routes = {};
+    $scope.stops = {};
+    $http.get("http://api.metro.net/agencies/lametro/routes/")
+        .success(function (data) {
+            $scope.routes = data.items;
+            angular.forEach($scope.routes, function (value) {
+                $http.get("http://api.metro.net/agencies/lametro/stops/" + value.id + "/predictions/")
+                    .success(function (data) {
+                        $scope.stops = data.items;
+                    })
+                    .error(function (error) {
+                        alert("cannot make a call");
+                    })
+            })
+        })
+        .error(function (error) {
+            alert('cannot make a call. check internet connection');
+        })
 })
 .controller('PlaylistCtrl', function ($scope, $stateParams) {
 });

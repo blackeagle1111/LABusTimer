@@ -1,0 +1,337 @@
+2 Downtown LA - Pacific Palisades Via 2
+
+4 Downtown LA - Santa Monica Via Santa 4
+
+10 W Hollywood-Dtwn LA -Avalon Sta Via 10
+
+14 Beverly Hlls-Dtwn LA-Wash/Fairfax Vi 14
+
+16 Downtown LA - Century City Via West 16
+
+18 Wilshire Ctr-Montebello Via 6th St-W 18
+
+20 Downtown LA - Santa Monica Via Wilsh 20
+
+28 Century City-Dtw LA-Eagle Rck Via Ol 28
+
+30 W Hollywood - Dtwn LA - Indiana Sta 30
+
+33 Downtown LA - Santa Monica Via Venic 33
+
+35 Downtown LA- WLA Via Washington Bl & 35
+
+37 Beverly Hlls-Dtwn LA-Wash/Fairfax Vi 37
+
+38 Downtown LA- WLA Via Washington Bl & 38
+
+40 Downtown LA-Sbay Galleria Via King B 40
+
+45 Lincoln Heights - Dwntwn LA- Rosewoo 45
+
+48 W Hollywood-Dtwn LA -Avalon Sta Via 48
+
+51 Wilshr Ctr-Dtwn LA-Compton-Harbr Gtw 51
+
+52 Wilshr Ctr-Dtwn LA-Compton-Harbr Gtw 52
+
+53 Downtown LA - Csu Domiguez Hills Via 53
+
+55 Downtown LA - Willowbrook Sta Via Co 55
+
+60 Downtown LA - Artesia Station Via Lo 60
+
+62 Downtown LA - Hawaiian Gardens Via T 62
+
+66 Wilshire Ctr-Dtwn LA-Montebello Via 66
+
+68 Downtown LA-Montebello Via Chavez - 68
+
+70 Downtown LA - El Monte Via Marengo S 70
+
+71 Downtown LA - Csu LA - Lac+usc Med C 71
+
+76 Downtown LA - El Monte Via Valley Bl 76
+
+78 Downtown LA - Arcadia Via Las Tunas- 78
+
+79 Downtown LA - Arcadia Via Las Tunas- 79
+
+81 Eagle Rock- Dwntwn LA- Harbor Fwy St 81
+
+83 Century City - Eagle Rock Via Olympi 83
+
+90 Downtown LA- Sylmar Via Glendale Av 90
+
+91 Downtown LA- Sylmar Via Glendale Av 91
+
+92 Dwntwn LA- Burbank Sta Via Glendale 92
+
+94 Downtown LA - Sun Valley Via San Fer 94
+
+96 Dtwn LA- Burbank Sta Via Griffith Pk 96
+
+102 LAX Cty Bus Ctr - S Gate Via LA Tije 102
+
+105 W Hollywood - Vernon Via La Cienega 105
+
+108 Marina Del Rey - Pico Rivera Via Sla 108
+
+110 Playa Vista- Bell Gardens Via Jeffer 110
+
+111 LAX City Bus Ctr - Norwalk Sta Via F 111
+
+115 Playa Del Rey - Norwalk Via Manchest 115
+
+117 LAX Cty Bus Ctr-Downey Via Century B 117
+
+120 Aviation Station- Whittwood Mall Via 120
+
+125 El Segundo - Norwalk Station Via Ros 125
+
+126 Manhattn Beach- Hawthn/Lennox Sta Vi 126
+
+127 Compton Sta - Downey Via Compton - S 127
+
+128 Compton Sta - Cerritos Towne Center 128
+
+130 Redondo Beach - Los Cerritos Center 130
+
+150 Canoga Pk-Northridge-Universal City 150
+
+152 Woodland Hills - N Hollywood Sta Via 152
+
+154 Tarzana - Burbank Sta Via Oxnard St 154
+
+155 Sherman Oaks-Burbank Sta Via Riversi 155
+
+156 Panorama -Van Nuys-Hollywood Via Cha 156
+
+158 Chatsworth Sta-Sherman Oaks Via Devo 158
+
+161 Thousand Oaks -Agoura Hills -Calabas 161
+
+162 West Hills -Sun Valley-N Hollywood V 162
+
+163 West Hills -Sun Valley-N Hollywood V 163
+
+164 West Hills - Burbank Via Victory Bl 164
+
+165 West Hills - Burbank Via Vanowen St 165
+
+166 Chatsworth Sta -Sun Valley Via Nordh 166
+
+167 Chatsworth Sta-Studio Cty-Csun Via P 167
+
+169 Warner Ctr-Burbank Airpt Via Valley 169
+
+175 Silverlake - Hollywood Via Hyperion 175
+
+176 Highland Park - Montebello Via Missi 176
+
+177 JPL-Pasadena-Pcc College Via Califor 177
+
+180 Hollywood-Glendale-Pasadena Via Los 180
+
+181 Hollywood-Glendale-Pasadena Via Los 181
+
+183 Sherman Oaks - Glendale Via Magnolia 183
+
+190 El Monte Sta - Cal Poly Pomona Via R 190
+
+194 El Monte Sta - Cal Poly Pomona Via R 194
+
+200 Echo Park- Exposition Park Via Alvar 200
+
+201 Glendale - Koreatown Via Silverlake 201
+
+202 Willowbrook - Compton- Wilmington Vi 202
+
+204 Hollywood -Athens Via Vermont Av 204
+
+205 Willowbrook Sta-San Pedro Via Wilmgt 205
+
+206 Hollywood - Athens Via Normandie Av 206
+
+207 Hollywood - Athens Via Western Av 207
+
+209 Wilshire Center - Athens Via Van Nes 209
+
+210 Hllywd/Vine Sta - So Bay Galleria Vi 210
+
+211 Inglewood-South Bay Galleria Via Pra 211
+
+212 Hllywd/Vine Sta - Hawthorne/Lennox S 212
+
+215 Inglewood-South Bay Galleria Via Pra 215
+
+217 Hlywd/Vine Sta-Howrd Hughes Ctr Via 217
+
+218 Studio Cty-Cedars Sinai Med Via Laur 218
+
+220 Beverly Ctr - Culver City Sta Via Ro 220
+
+222 Sunland- Hollywood Via Sunland-Holyw 222
+
+224 Sylmar-Universal Cty Via San Fernand 224
+
+230 Mission College - Studio City Via LA 230
+
+232 LAX City Bus Ctr-Long Beach-Via Sepu 232
+
+233 Lake View Terr - Sherman Oaks Via Va 233
+
+234 Sylmar - Sherman Oaks Via Sepulveda 234
+
+236 Sylmar Sta-Encino- Sherman Oaks Via 236
+
+237 Sylmar Sta-Encino- Sherman Oaks Via 237
+
+239 Sylmar Sta - Encino Via White Oak - 239
+
+240 Canoga Pk-Northridge-Universal City 240
+
+242 Porter Rnch-Woodland Hils Via Tampa 242
+
+243 Porter Rnch-Woodland Hils Via Tampa 243
+
+244 Chatsworth Sta-Woodlnd Hls Via De So 244
+
+245 Chatsworth Sta-Woodlnd Hls Via De So 245
+
+246 San Pedro - Harbor Gateway Trans Ctr 246
+
+251 Cypress Park- Long Bch Green Line St 251
+
+252 Lincoln Heights - Boyle Heights Via 252
+
+254 Boyle Hghts-103rd/Watts Twrs Sta Vi 254
+
+256 Commerce - Altadena Via Eastern Av- 256
+
+258 Alhambra - Paramount Via Fremont - E 258
+
+260 Altadena - Artesia Sta Via Fair Oaks 260
+
+264 Pasadena - Altadena - City Of Hope - 264
+
+265 Pico Rivera - Lakewood Ctr Mall Via 265
+
+266 S Madre Villa Sta-Lakewood Ctr Mall 266
+
+267 Pasadena - Altadena - City Of Hope - 267
+
+268 Altadena - El Monte Sta Via Washingt 268
+
+270 Monrovia - Norwalk Sta Via Workman M 270
+
+292 Sylmar Sta-Burbank Sta Via Glenoaks 292
+
+302 Downtown LA - Pacific Palisades Via 302
+
+311 LAX City Bus Ctr - Norwalk Sta Via F 311
+
+312 Hllywd/Vine Sta - Hawthorne/Lennox S 312
+
+316 Downtown LA - Century City Via West 316
+
+330 W Hollywood - Dtwn LA - Indiana Sta 330
+
+344 Harbor Gateway Tc - Palos Verdes Via 344
+
+352 Wilshr Ctr-Dtwn LA-Compton-Harbr Gtw 352
+
+353 Woodland Hills - N Hollywood Sta Via 353
+
+355 Downtown LA - Willowbrook Sta Via Co 355
+
+358 Marina Del Rey - Pico Rivera Via Sla 358
+
+364 Chatsworth Sta -Sun Valley Via Nordh 364
+
+378 Downtown LA - Arcadia Via Las Tunas- 378
+
+442 Downtown LA - Hawthorne/Lennox Sta- 442
+
+450 Downtown LA - San Pedro Via Harbor T 450
+
+460 Downtown LA - Disneyland Via Harbor 460
+
+485 Downtown LA - Altadena Via Fremont - 485
+
+487 Downtown LA - S Madre Villa Sta - El 487
+
+489 Downtown LA - S Madre Villa Sta - El 489
+
+534 Malibu - Washington/Fairfax Via Paci 534
+
+550 Jefferson Park - San Pedro Via Harbo 550
+
+577 El Monte Sta- Long Beach Va Med Ctr 577
+
+603 Glendale-Grand Sta Via San Fernando- 603
+
+605 Lac+usc Med Ctr Out Patient - Olympi 605
+
+607 Windsor Hills - Inglewood Shuttle 607
+
+611 Huntington Park Shuttle 611
+
+612 South Gate Shuttle 612
+
+620 Boyle Heights Shuttle 620
+
+625 Metro Green Line Shuttle 625
+
+656 Panorama -Van Nuys-Hollywood Via Cha 656
+
+665 Cal State LA - City Terrace Shuttle 665
+
+685 Glendale College - Glassell Park Vi 685
+
+686 Altadena-Pasadena Via Fair Oaks-Los 686
+
+687 Altadena-Pasadena Via Fair Oaks-Los 687
+
+704 Downtown LA - Santa Monica Via Santa 704
+
+705 W Hollywood - Vernon Via La Cienega 705
+
+710 Wilshire Ctr - South Bay Galleria Vi 710
+
+720 Santa Monica-Commerce Via Wilshire - 720
+
+728 Downtown LA - Century City Via West 728
+
+733 Downtown LA - Santa Monica Via Venic 733
+
+734 Sylmar Sta - Sherman Oaks Via Sepulv 734
+
+740 Expo/Crenshaw Sta - So Bay Galleria 740
+
+741 Northridge - Tarzana - Csun Via Rese 741
+
+745 Downtown LA - Harbor Freeway Station 745
+
+750 Warner Ctr - Universal/Studio City V 750
+
+751 Cypress Park - Huntington Park Via S 751
+
+754 Hollywood - Athens Via Vermont Av 754
+
+757 Hollywood - Crenshaw Station Via Wes 757
+
+760 Downtown LA - Long Beach Gl Sta Via 760
+
+761 Pacoima-Westwood Via Van Nuys Bl - S 761
+
+762 Pasadena - Artesia Station Via Atlan 762
+
+770 Downtown LA - El Monte Sta Via Garve 770
+
+780 Pasadena-Washtn/Fairfax Via Colorado 780
+
+794 Downtown LA - Sylmar Sta Via San Fer 794
+
+901 Metro Orange Line 901
+
+910 Metro Silver Line 910

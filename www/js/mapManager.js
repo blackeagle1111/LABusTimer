@@ -19,6 +19,7 @@
         refresh();
 
         function onSuccess(position) {
+            var radius = 9000;
             userLat = global(position.coords.latitude);
             userLng = global(position.coords.longitude);
 
@@ -28,6 +29,11 @@
                 lat: lati,
                 lng: lngi
             });
+
+            //check user's location and then call fusion api
+            if (userLat != null && userLng != null) {
+                callfusion(map, userLat, userLng, radius);
+            }
 
             //draw marker at user 's location
             map.addMarker({
@@ -50,10 +56,7 @@
             //zoom map to fit two markers           
             map.fitZoom();
 
-            //check user's location and then call fusion api
-            if (userLat != null && userLng != null) {
-                callfusion(userLat,userLng);
-            }
+
         }
 
         function onError(error) {
@@ -67,10 +70,12 @@
     //check if user's location is available
 
 
-    function callfusion(userLat,userLng) {
+    function callfusion(map, userLat, userLng,radius) {
         var query = "SELECT 'StopID', 'Name', 'Latitude','Longitude' FROM " +
             '1-LTbc4YJWKl7YNa8ap-1BOMF2o5MNJDyC9alLufj';
         var encodedQuery = encodeURIComponent(query);
+        var UserLocation = { lat: userLat, lng: userLng };
+        var availableStop = [];
         //construct URL
         var url = ['https://www.googleapis.com/fusiontables/v1/query'];
         url.push('?sql=' + encodedQuery);
@@ -82,26 +87,55 @@
             success: function (data) {
                 //have to catch for error here
 
-                console.log(data);
-
-
+                console.log(data.rows);
+                availableStop = getStopByDistance(data.rows, UserLocation, radius)
+                if (availableStop.length != 0) {
+                    availableStop.forEach(function (element, index) {
+                        map.addMarker({
+                            lat: element[2],
+                            lng: element[3],
+                            title: element[0],
+                            click: function (e) {
+                                alert(element[1]);
+                            }
+                        });
+                        // map.fitZoom();
+                    })
+                    map.fitZoom();
+                } else {
+                    alert("There is no stop around your area. Please increase your radius and search again. Current radius " + radius + " meter(s)");
+                }
             }
-        })
+        });
+
     }
 
     var rad = function (x) {
         return x * Math.PI / 180;
     };
 
-    var getDistance = function (p1, p2) {
+
+    var getDistance = function (center, p2) {
         var R = 6378137; // Earth’s mean radius in meter
-        var dLat = rad(p2.lat() - p1.lat());
-        var dLong = rad(p2.lng() - p1.lng());
+        var dLat = rad(p2[2] - center.lat);
+        var dLong = rad(p2[3] - center.lng);
         var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-        Math.cos(rad(p1.lat())) * Math.cos(rad(p2.lat())) *
+        Math.cos(rad(center.lat)) * Math.cos(rad(p2[2])) *
         Math.sin(dLong / 2) * Math.sin(dLong / 2);
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         var d = R * c;
         return d; // returns the distance in meter
     };
+
+    //get all stop within the radius, default to 100m
+    function getStopByDistance(stops, center, radius) {
+        var availableStops = [];
+        var radius = radius | 100;
+        stops.forEach(function (element, index) {
+            if (getDistance(center, element) <= radius) {
+                availableStops.push(element);
+            }
+        });
+        return availableStops;
+    }
 })()

@@ -14,6 +14,7 @@ Tools:
   3. Cordova
   4. Google Map
   5. Fusion Table
+  6. Google Map 
 
 
 Flatform:

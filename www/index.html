@@ -21,19 +21,61 @@
 
     <!-- google map api-->    
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <!-- gmaps.js-->
-    <script src="lib/gmaps.js"></script>
+    <!-- gmaps.js
+    <script src="lib/gmaps.js"></script> -->
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
-    <script src="js/mapManager.js"></script>    
+    <script src="js/mapManager.js"></script>   
+    <script src="js/Utils.js"></script>
+          
+    <script type="text/javascript">
+        //callback function for onchange event in search bar in map.html
+        function searchTerm() {
+            var searchValue = document.getElementById('search').value;
+            if (searchValue != null)
+                search(searchValue);
+        }
+
+
+        //callback funtion when onsubmit event is called in map.html
+        function searchSubmit() {
+            var searchValue = document.getElementById('search').value;
+            if (searchValue != null)
+                search(searchValue);
+        }
+
+        //main search function; allow searching "VALUE" in Stoptable and Routetable
+        function search(value) {
+            var stopQuery = "SELECT 'StopID', 'Name', 'Latitude','Longitude' FROM " +
+                Constant.StopTable + " WHERE StopID LIKE '%" + value + "%'";
+            
+            var stopQuery2 = "SELECT 'StopID', 'Name', 'Latitude','Longitude' FROM " +
+                Constant.StopTable + " WHERE 'Name' IN {" + value + "}";
+            var encodedQuery = encodeURIComponent(stopQuery);
+
+            var availableResult = [];
+            //construct URL
+            var url = [Constant.FusionURL];
+            url.push('?sql=' + encodedQuery);
+            url.push('&key=' + Constant.JSAPIKey);
+            url.push('&callback=?');
+            $.ajax({
+                url: url.join(''),
+                dataType: 'jsonp',
+                success: function (data) {
+                    console.log(data);
+                }
+            })
+        }
+    </script>
     </head>
 
   <body ng-app="starter">    
-    <ion-nav-view id="canvas">        
+    <ion-nav-view >                
     </ion-nav-view>      
   </body>
 </html>

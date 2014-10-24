@@ -1,0 +1,22 @@
+<ion-view title="Favorites">
+    <ion-nav-buttons side="left" style="display: block" >             
+            <button menu-toggle="left"  class="button button-icon icon ion-navicon"></button>                                      
+             <button id="refresh" class="button ion-delete" ng-click="refresh()"></button>
+             
+        </ion-nav-buttons>   
+    <ion-content>    
+    <div ng-show="{{visible}}">
+        <label >Empty</label>
+    </div>
+    <div class="list" id="favList" >
+        <a href="#app/routes/stops/{{f.SID}}" ng-repeat="f in favorites">
+            <span class="badge badge-assertive">{{f.SID}}</span>
+            <i class="icon ion-mic-a"></i>
+            Stop Name
+            <span class="item-note">
+              {{f.minute}}
+            </span>
+          </a>
+    </div>
+        </ion-content>
+</ion-view>

@@ -1,17 +1,8 @@
 (function () {
     var map;
-    var global = window.eval;
-    //set up layout and screen size
-    var h = $('#canvas').height();
-    var mapContent = $('#canvas').height(h).css({ "margin-top": "30px" })
-    var h1 = mapContent.height();
-    var w = $('#canvas').width();
-    var lati = -12.043333;
-    var lngi = -77.028333;
-
     //init userLocation
-    window.userLat = null;
-    window.userLng = null;
+    var userLat = null;
+    var userLng = null;
 
     $(document).on('ready', function () {
 
@@ -20,43 +11,38 @@
 
         function onSuccess(position) {
             var radius = 9000;
-            userLat = global(position.coords.latitude);
-            userLng = global(position.coords.longitude);
-
+            userLat = position.coords.latitude;
+            userLng = position.coords.longitude;
+            var image = 'img/male-2.png';
             //set up the map to display
+            /*
             map = new GMaps({
-                div: '#canvas',
-                lat: lati,
-                lng: lngi
+            div: '#canvas',
+            lat: userLat,
+            lng: userLng
             });
-
+            */
+            var mapOptions = {
+                zoom: 10,
+                center: new google.maps.LatLng(userLat, userLng)
+            }
+            map = new google.maps.Map(document.getElementById('map-canvas'),
+                                mapOptions);
             //check user's location and then call fusion api
             if (userLat != null && userLng != null) {
                 callfusion(map, userLat, userLng, radius);
             }
 
-            //draw marker at user 's location
-            map.addMarker({
-                lat: userLat,
-                lng: userLng,
-                title: 'Your Location',
+            //draw marker at user 's location           
+            var myLocation = new google.maps.Marker({
+                position: new google.maps.LatLng(userLat, userLng),
+                map: map,
+                icon: image,
                 click: function (e) {
                     alert('Your Location');
                 }
             });
-            //draw route from user's location to pho's location
-            map.drawRoute({
-                origin: [userLat, userLng],
-                destination: [lati, lngi],
-                travelMode: 'driving',
-                strokeColor: 'blue',
-                strokeOpacity: 0.6,
-                strokeWeight: 6
-            });
-            //zoom map to fit two markers           
-            map.fitZoom();
-
-
+            // map.fitZoom();
         }
 
         function onError(error) {
@@ -70,7 +56,7 @@
     //check if user's location is available
 
 
-    function callfusion(map, userLat, userLng,radius) {
+    function callfusion(map, userLat, userLng, radius) {
         var query = "SELECT 'StopID', 'Name', 'Latitude','Longitude' FROM " +
             '1-LTbc4YJWKl7YNa8ap-1BOMF2o5MNJDyC9alLufj';
         var encodedQuery = encodeURIComponent(query);
@@ -87,21 +73,27 @@
             success: function (data) {
                 //have to catch for error here
 
-                console.log(data.rows);
+                //console.log(data.rows);
                 availableStop = getStopByDistance(data.rows, UserLocation, radius)
                 if (availableStop.length != 0) {
                     availableStop.forEach(function (element, index) {
-                        map.addMarker({
-                            lat: element[2],
-                            lng: element[3],
-                            title: element[0],
+                        var loc = new google.maps.LatLng(element[2], element[3]);
+                        var ttl = element[0];
+                        var image = 'img/busstop.png';
+                        var busMarker = new google.maps.Marker({
+                            position: loc,
+                            mapa: map,
+                            icon: image,
+                            title: ttl,
                             click: function (e) {
-                                alert(element[1]);
+                                //go to the stop template
+                                window.location.href = '/app/routes/stops/' + element[1];
+                                window.location.reload();
                             }
-                        });
-                        // map.fitZoom();
+                        })
+
                     })
-                    map.fitZoom();
+                    
                 } else {
                     alert("There is no stop around your area. Please increase your radius and search again. Current radius " + radius + " meter(s)");
                 }
@@ -138,4 +130,43 @@
         });
         return availableStops;
     }
+    //callback function for onchange event in search bar in map.html
+    function searchTerm() {
+        var searchValue = $("#search").eval();
+        if (searchValue != null)
+            search(searchValue);
+    }
+
+    //callback funtion when onsubmit event is called in map.html
+    function searchSubmit() {
+        var searchValue = $("#search").eval();
+        if (searchValue != null)
+            search(searchValue);
+    }
+
+
+    //main search function; allow searching "VALUE" in Stoptable and Routetable
+    function search(value) {
+        var stopQuery = "SELECT 'StopID', 'Name', 'Latitude','Longitude' FROM " +
+            Constant.StopTable + "WHERE 'StopID' LIKE '%''" + value + "'% AND 'Name' LIKE '%'" + value + "'%'";
+
+        var encodedQuery = encodeURIComponent(stopQuery);
+
+        var availableResult = [];
+        //construct URL
+        var url = [Constant.FusionURL];
+        url.push('?sql=' + encodedQuery);
+        url.push('&key=' + Constant.JSAPIKey);
+        url.push('&callback=?');
+        $.ajax({
+            url: url.join(''),
+            dataType: 'jsonp',
+            success: function (data) {
+                console.log(data);
+            }
+        })
+    }
 })()
+
+//bus routes
+//https://www.google.com/fusiontables/DataSource?docid=1Z77QR69JdcZcEsGxpBpom4JAg203Ef5K3GNBGdHu

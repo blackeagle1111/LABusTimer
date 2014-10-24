@@ -1,7 +1,12 @@
-<ion-view title="Stop {{stopID}}">
-    <ion-nav-buttons side="left"  >
-        <button menu-toggle="left"  class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
+<ion-view >                    
+    <div class="bar bar-header bar-calm">
+         <ion-nav-buttons side="left" style="display: block" >
+             <h1 class="title">Stop {{stopID}}</h1>
+            <button menu-toggle="left"  class="button button-icon icon ion-navicon"></button>                                      
+             <button id="refresh" class="button ion-refresh" ng-click="refresh()"></button>
+             <button id="favor" class="button ion-android-star"ng-click="addFavorite()"></button>
+        </ion-nav-buttons>                
+    </div>
     <ion-content class="has-header">
         <label> Stop: {{stopID}}</label>
         <label> Connection Status: {{status}}</label>
